@@ -1,0 +1,27 @@
+# Name: REDACTED
+# Section: CPSC 240-07
+# E-mail: REDACTED
+
+b main
+b driver.cpp:14
+b electric.asm:75
+b electric.asm:81
+b driver.cpp:19
+r
+
+p/x $rsp
+c
+
+x/8xg $rbp-(7*8)
+c
+
+## NOTE: You will be prompted to input numbers at this point.
+
+p/lf $xmm15.v2_double[0]
+c
+
+p/x *(long*)$rbp
+c
+
+p/lf ret
+c

@@ -1,0 +1,30 @@
+b driver.cpp:7
+r
+p/x $xmm0.v2_int64[0]
+p/x *(long*)$rbp
+p/x ($rbp-$rsp)/8 + 1
+x/12xg $rbp-11*8
+b my_asm_program
+c
+
+p/s (char*)&str_prompt
+p/x &str_prompt
+p/x *(long*)$rbp
+b __POST_INPUT
+c
+
+p/x $rsi
+b __POST_CALCULATION
+c
+
+p/lf *(double*)$rsp
+b __POST_CALCULATION
+c
+
+p/lf $xmm0.v2_double[0]
+b driver.cpp:8
+c
+
+p/x $xmm0.v2_int64[0]
+p/lf $xmm0.v2_double[0]
+x/14xg $rbp-(14-1)*8
